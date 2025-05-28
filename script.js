@@ -5,7 +5,7 @@ function passwordGenerator() {
     const display = document.getElementById('password');
 
     /*--- Intializing the configurations ---*/
-    let passwordLength = 10;
+    const passwordLength = 10;
     let includeLowerCase = true;
     let includeUpperCase = true;
     let includeNumbers = true;
@@ -24,16 +24,6 @@ function passwordGenerator() {
     allowedcharacters += includeUpperCase ? upperCasechars : '';
     allowedcharacters += includeNumbers ? numberchars : '';
     allowedcharacters += includeSpecialCharacters ? specialChars : '';
-
-    /*--- Input Validation ---*/
-    if(passwordLength < 6) {
-        display.textContent = 'Password length must be at least 6';
-        return 'Pasword length must be atleast 6';
-    }
-
-    if(allowedcharacters.length === 0) {
-        display.innerHTML =  'At least one character type must be included';
-    }
 
     /*--- Generating the password ---*/
     for(let i = 0; i < passwordLength; i++) {
